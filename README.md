@@ -1,54 +1,104 @@
 
 # StarField Skirmish
 
-"**StarField Skirmish**" is a dynamic, space-themed shooter game that challenges players to navigate through levels of increasing difficulty, managing alien encounters and enhancing their spaceship capabilities. Developed with engaging mechanics and a user-friendly interface, the game offers an immersive experience in space combat.
+A dynamic space combat simulator featuring progressive difficulty scaling, real-time combat mechanics, and dynamic enemy generation. Built in C++, the game combines object-oriented design with robust game architecture to create an engaging space warfare experience.
 
-## Table of Contents
-- [Key Features](#key-features)
-- [Running the Game](#running-the-game)
-- [Game Controls](#game-controls)
-- [Bugs](#bugs)
-- [Contributing](#contributing)
-- [License](#license)
+## Overview
 
-## Key Features
+StarField Skirmish challenges players to navigate through an increasingly difficult cosmic battlefield. As players progress, they face evolving challenges through:
+- Dynamic difficulty adjustments based on player performance
+- Progressively complex enemy patterns and behaviors
+- Real-time combat with responsive controls
+- Resource and health management systems
 
-### Alien Ship Management
-- **Dynamic Alien Ship Creation**: The game dynamically generates alien ships, with the number and difficulty of ships scaling with the player's current level.
-- **Level-Adjusted Ships**: Alien ships' fire rate and speed increase with the game level, introducing progressively challenging encounters.
+## Features
 
-### Game Level Dynamics
-- **Ship Scrolling**: Alien ships move vertically down the screen at a pace determined by the `shipScrollerSpeed`, which increases as the player advances through levels.
-- **Level-Based Ship Addition**: New lines of alien ships are added at intervals corresponding to the current level, making the game progressively more complex.
+### Combat System
+- Real-time projectile mechanics with precise collision detection
+- Multiple enemy types with distinct attack patterns
+- Dynamic weapon system with upgrades and special abilities
+- Progressive difficulty scaling tied to player performance
 
-### New Screens and User Interface
-- **Main Menu**: The `MainMenuView` class provides a main menu screen, offering options to start the game, view instructions, or exit.
-- **Information Screen**: The `InfoView` class displays game instructions and controls, aiding player interaction and understanding.
+### Enemy AI
+- Advanced enemy ship generation with level-based scaling
+- Dynamic movement patterns that evolve with game progression
+- Intelligent targeting and attack coordination
+- Adaptive difficulty adjustment based on player performance
 
-### Game Controls and Interaction
-- **Key Handling in Game Loop**: The `runGameLoop()` function listens for key inputs, allowing players to control their spaceship (movement and shooting) and manage game states (exit or restart).
+### Game Progression
+- Experience-based leveling system
+- Unlockable abilities and ship upgrades
+- Score multiplier system for skilled play
+- Performance tracking and statistics
 
-### Game Information Display
-- **Real-Time Info Updates**: The `printGameInfo()` function continuously displays important game-related information, such as the number of active alien ships, player health, and score, ensuring players are well-informed throughout gameplay.
+### Technical Implementation
+- Custom game engine built in C++
+- Efficient collision detection algorithms
+- Thread-safe resource management
+- Optimized rendering and update cycles
 
-## Running the Game
+## Getting Started
 
-To start playing "**StarField Skirmish**," follow these steps:
+### Prerequisites
+- C++ Compiler (GCC 7.0+)
+- Make build system
 
-### 1. **Compile the Game**
-Run `make` in the project root directory to compile the game.
+### Installation
 
-### 2. **Launch the Game**
-- Navigate to the `bin` directory and execute `./starfield_skirmish`.
-- Alternatively, you can run `./run.sh` from the root directory for convenience.
+1. Clone the repository
+```bash
+git clone https://github.com/GabrielPerezCSDev/starfield-skirmish.git
+cd starfield-skirmish
+```
 
-### 3. **Game Controls**
-- Use the **arrow keys** (left and right) to move your spaceship.
-- Press the **spacebar** to shoot.
-- To exit the game at any time, press **ESC**.
+2. Build the project
+```bash
+make clean
+make
+```
 
-## Bugs
+3. Run the game
+```bash
+./bin/starfield-skirmish
+```
 
-- **Static Ships**: Sometimes alien ships may stop scrolling. This issue can often be fixed by fully exiting the game and restarting.
-- **Frozen Bullet**: Occasionally, a bullet from the player's ship might freeze in place. This is a rare occurrence and typically resolves after the next shot.
+## Game Controls
+
+### Basic Controls
+- **←/→**: Move ship left/right
+- **Spacebar**: Fire weapon
+- **ESC**: Pause game/Access menu
+
+### Advanced Mechanics
+- **Double tap ←/→**: Quick dodge
+- **Hold Spacebar**: Charge shot
+- **P**: Quick pause
+
+## Development
+
+### Architecture
+The game is built using a component-based architecture:
+- Core game loop with fixed update timing
+- Event-driven input handling
+- Entity component system for game objects
+- Resource management system
+
+### Performance Optimization
+- Efficient collision detection using spatial partitioning
+- Object pooling for projectiles and particles
+- Optimized rendering pipeline
+- Memory management systems
+
+## Known Issues & Future Improvements
+
+### Current Limitations
+- Occasional static behavior in alien ship movement
+- Rare projectile rendering artifacts
+- Performance degradation at high enemy counts
+
+### Planned Enhancements
+- Additional enemy types with unique behaviors
+- Power-up system with temporary abilities
+- Local multiplayer support
+- Enhanced visual effects and particle systems
 
